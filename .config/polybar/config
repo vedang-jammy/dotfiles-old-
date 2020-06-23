@@ -1,0 +1,271 @@
+[colors]
+background = #2E3440
+buffer = #3B4252
+foreground = #D8DEE9
+nord6 = #ECEFF4
+nord7 = #8FBCBB
+nord8 = #88C0D0
+nord9 = #81A1C1
+alert = #BF616A
+warning = #D08770
+notify = #EBCB8B
+success = #A3BE8C
+function = #B48EAD
+
+[bar/example]
+monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 28
+
+background = ${colors.background}
+foreground = ${colors.nord6}
+
+line-size = 3
+line-color = ${color.alert} #BF616A
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 2
+module-margin-right = 2
+
+font-0 = fixed:pixelsize=10;3
+font-1 = unifont:fontformat=truetype:size=10:antialias=true;2
+font-2 = siji:pixelsize=10;3
+font-3 = FontAwesome5Free:style=Solid:pixelsize=10:antialias=true;3
+font-4 = FontAwesome5Brands:style=Solid:pixelsize=10:antialias=true;3
+
+modules-left = i3 xwindow
+modules-center = date 
+modules-right = spotify battery memory cpu powermenu 
+
+tray-position = right
+tray-padding = 15
+
+override-redirect = false
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+format-prefix = "   "
+format-prefix-foreground = ${colors.nord7}
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+ws-icon-0 = "1:main"
+ws-icon-1 = "2:console";
+ws-icon-2 = "3:firefox";
+ws-icon-3 = "4:editor";
+ws-icon-4 = "5:music"; 
+ws-icon-5 = "6:video";
+ws-icon-6 = "7:files";
+ws-icon-7 = 8;random
+ws-icon-default = 
+
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-foreground = ${colors.function}
+label-mode-background = ${colors.nord7}
+
+label-focused = %index%
+label-focused-background = ${colors.nord7}
+label-focused-underline= ${colors.warning}
+label-focused-foreground =${colors.foreground}
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.nord7}
+label = %percentage: %%
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.nord7}
+label = %percentage_used%%
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[module/date]
+type = internal/date
+interval = 5
+
+date-alt = " %a, %d %h %y"
+date =
+
+time-alt = " %I : %M %p"
+time = " %I : %M %p"
+
+format-prefix =  
+format-prefix-foreground = ${colors.nord7}
+
+label = %date% %time%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+use-ui-max = true
+interval = 3
+format-volume = <ramp-volume> <label-volume>
+label-muted =  muted
+label-muted-foreground = ${colors.warning} 
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+; Right and Middle click (unreleased)
+; click-middle = 
+click-right = pavucontrol &
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+compositing-border = over
+pseudo-transparency = true
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = "  "
+format-prefix-foreground = ${colors.nord7}
+format = <label>
+exec = python ~/.config/polybar/spotify.py -f '{artist}: {song}'
+;format-underline = ${colors.secondary}
+click-middle = playerctl play-pause
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[module/battery]
+;https://github.com/jaagr/polybar/wiki/Module:-battery
+type = internal/battery
+battery = BAT0
+adapter = AC0
+full-at = 100
+
+format-charging = <animation-charging> <label-charging>
+label-charging =  %percentage%%
+format-charging-foreground = ${colors.foreground}
+format-charging-background = ${colors.background}
+;format-charging-underline = #a3c725
+
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging =  %percentage%%
+;format-discharging-underline = #c7ae25
+format-discharging-foreground = ${colors.foreground}
+format-discharging-background = ${colors.background}
+
+format-full-prefix = " "
+format-full-prefix-foreground = #a3c725
+;format-full-underline = #a3c725
+format-full-foreground = ${colors.foreground}
+format-full-background = ${colors.background}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = #c7ae25
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = #a3c725
+animation-charging-framerate = 750
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+menu-0-0 = 
+menu-0-0-exec = menu-open-1
+menu-0-1 = 
+menu-0-1-exec = menu-open-2
+menu-0-2 = 
+menu-0-2-exec = menu-open-3
+menu-0-3 = 
+menu-0-3-exec = menu-open-4
+
+menu-1-0 = 
+menu-1-0-exec = systemctl reboot
+menu-1-1 = 
+menu-1-1-exec = menu-open-0
+
+menu-2-0 = 
+menu-2-0-exec = systemctl poweroff
+menu-2-1 = 
+menu-2-1-exec = menu-open-0
+
+menu-3-0 = 
+menu-3-0-exec = i3lock-fancy
+menu-3-1 = 
+menu-3-1-exec = menu-open-0
+
+menu-4-0 = 
+menu-4-0-exec = i3-msg exit
+menu-4-1 = 
+menu-4-1-exec = menu-open-0
+
+format-spacing = 1
+format-background = ${colors.background}
+format-foreground = ${colors.nord6}
+format-padding = 1
+
+label-open = 
+label-close = 
+label-separator = |
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
