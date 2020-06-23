@@ -1,0 +1,38 @@
+#!/bin/sh
+# Add Alias Here (Source this file in your zshrc/bashrc file )
+
+# Verbosity and settings that you pretty much just always are going to want.
+alias \
+	alias cp="cp -iv" \
+	alias mv="mv -iv" \
+	alias rm="rm -v" \
+	alias mkd="mkdir -pv" \
+	alias yt="youtube-dl --add-metadata -i" \
+	alias yta="yt -x -f bestaudio/best" \
+	alias ffmpeg="ffmpeg -hide_banner" \
+	alias mpv="devour mpv" \
+	alias sxiv="devour sxiv" \
+	alias gtop="LANG=en_US.utf8 TERM=xterm-256color gtop" \
+
+# Abbrevation for long Commands
+alias \
+	alias ka="killall" \
+	alias g="git" \
+	#trem="transmission-remote" \#
+	alias YT="youtube-viewer" \
+	alias sdn="sudo shutdown -h now" \
+	alias f="$FILE" \
+	alias e="$EDITOR" \
+	alias p="sudo pacman" \
+	alias y='yay'	\
+	alias emu="scrcpy -m 1920"\
+	alias SS="sudo systemctl"\
+	alias zshrc="kate ~/.zshrc"\
+	alias i3config="kate ~/.i3/config"\
+	alias l='ls'\
+	alias ll="ls -l"\
+	alias la="ls -a"\
+	alias lla="ls -l -a"\
+	alias susp="systemctl suspend"\
+	alias ..="cd .."
+
