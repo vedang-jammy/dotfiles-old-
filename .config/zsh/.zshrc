@@ -123,9 +123,9 @@ source $ZSH/oh-my-zsh.sh
 #/opt/shell-color-scripts/colorscript.sh random
 
 # Load aliases
-[ -f "$HOME/.config/zsh/aliasrc" ] && source "$HOME/.config/zsh/aliasrc"
+[ -f "/home/jammy/dotfiles/.config/zsh/aliasrc" ] && source "/home/jammy/dotfiles/.config/zsh/aliasrc"
 
 #custom greet
 #/home/jammy/greet.zsh
 #
-pfetch
+neofetch
