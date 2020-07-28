@@ -10,9 +10,6 @@ alias \
 	alias yt="youtube-dl --add-metadata -i" \
 	alias yta="yt -x -f bestaudio/best" \
 	alias ffmpeg="ffmpeg -hide_banner" \
-	alias mpv="devour mpv" \
-	alias gedit="devour gedit" \
-	alias sxiv="devour sxiv" \
 	alias gtop="LANG=en_US.utf8 TERM=xterm-256color gtop" \
 
 # Abbrevation for long Commands

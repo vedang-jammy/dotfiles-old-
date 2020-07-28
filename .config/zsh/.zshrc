@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/jammy/.oh-my-zsh"
+export ZSH="/home/jammy-bspc/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -11,7 +11,7 @@ export ZSH="/home/jammy/.oh-my-zsh"
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="sunrise"
 
-ZSH_THEME="random"
+ZSH_THEME="agnoster"
 #SOLARIZED_THEME="dark"
 
 # Set list of themes to pick from when loading at random
@@ -123,7 +123,7 @@ source $ZSH/oh-my-zsh.sh
 #/opt/shell-color-scripts/colorscript.sh random
 
 # Load aliases
-[ -f "/home/jammy/dotfiles/.config/zsh/aliasrc" ] && source "/home/jammy/dotfiles/.config/zsh/aliasrc"
+[ -f "/home/jammy-bspc/dotfiles/.config/zsh/aliasrc" ] && source "/home/jammy-bspc/dotfiles/.config/zsh/aliasrc"
 
 #custom greet
 #/home/jammy/greet.zsh
