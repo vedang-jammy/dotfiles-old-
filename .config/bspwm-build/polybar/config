@@ -126,7 +126,7 @@ modules-right = arrow1 networkspeedup networkspeeddown arrow2 memory2 arrow3 cpu
 tray-detached = false
 tray-offset-x = 0
 tray-offset-y = 0
-tray-position = right
+tray-position = right 
 tray-padding = 2
 tray-maxsize = 20
 tray-scale = 1.0
@@ -248,6 +248,45 @@ content-font = 2
 content-foreground = #292d3e
 content-background = #668bd7
 
+
+[module/previous]
+type = custom/ipc
+format-font = 2
+; Default
+hook-0 = echo ""
+; When spotify active
+hook-1 = echo " "
+click-left = "spotifyctl -q previous"
+
+
+[module/next]
+type = custom/ipc
+format-font = 2
+; Default
+hook-0 = echo ""
+; When spotify active
+hook-1 = echo " "
+click-left = "spotifyctl -q next"
+
+
+[module/playpause]
+type = custom/ipc
+format-font = 2
+; Default
+hook-0 = echo ""
+; Playing
+hook-1 = echo " "
+; Paused
+hook-2 = echo " "
+click-left = "spotifyctl -q playpause"
+
+
+[module/spotify]
+type = custom/ipc
+; Default
+hook-0 = echo ""
+; Playing/paused show song name and artist
+hook-1 = spotifyctl -q status --format '%artist%: %title%'
 
 ################################################################################
 ###############################################################################
@@ -483,7 +522,7 @@ date = " %a %b %d"
 date-alt = " %a %b %d, %Y"
 time = %l:%M%p
 time-alt = %l:%M%p
-format-prefix = " "
+format-prefix = "   "
 format-prefix-foreground = #fefefe
 format-foreground = #fefefe
 format-background = #668bd7
@@ -842,7 +881,7 @@ format-background = ${colors.background}
 [module/spotify1]
 ;https://github.com/NicholasFeldman/dotfiles/blob/master/polybar/.config/polybar/spotify.sh
 type = custom/script
-exec = ~/.config/polybar/scripts/spotify1.sh
+exec = ~/.config/polybar/scripts/spotify.sh
 interval = 1
 
 ;format = <label>

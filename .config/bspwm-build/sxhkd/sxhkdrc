@@ -176,6 +176,17 @@ alt + ctrl + r
 alt + ctrl + t
    /home/dt/.dmenu/dmenu-trading.sh 
    
+   # Player Previous
+XF86AudioPrev
+	playerctl previous
+
+# Player Next
+XF86AudioNext
+	playerctl next
+
+# Player Play/Pause
+XF86AudioPlay
+	playerctl play-pause
    
 # Audiokeys
 XF86AudioMute
@@ -183,14 +194,16 @@ XF86AudioMute
 XF86Audio{Raise,Lower}Volume
 	amixer sset Master 5%{+,-}; pkill -RTMIN+10 blocks
 	
-	
+#screenshot	
+print
+ terminator -e scrot
 	
 # Function keys
 
 super + F1
 	pcmanfm
 super + F2
-	spotify
+	dbus-launch spotify
 super + F3
   brave
 super + F9
