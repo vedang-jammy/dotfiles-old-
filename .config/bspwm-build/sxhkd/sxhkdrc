@@ -115,7 +115,7 @@ super + Return
 	terminator
 # launch ncpamixer
 super + alt + a
-    st -e ncpamixer
+    Terminator -e ncpamixer
 # launch surf browser
 #super + alt + b
  #   brave
@@ -124,22 +124,22 @@ super + alt + c
     st -e cmus
 # launch lynx web browser
 super + alt + l
-    st -e lynx -cfg=~/.lynx/lynx.cfg -lss=~/.lynx/lynx.lss -vikeys gopher://distro.tube
+    terminator -e lynx 
 # launch irssi chat client
 super + alt + i
-    st -e irssi
-# launch joplin
+    terminator -e irssi
+# launch keep
 super + alt + k
         google-keep
 # launch toot cli
 super + alt + m
-    st -e toot curses
+    terminator -e toot curses
 # launch newsboat feed reeder
 super + alt + n
     terminator -e newsboat
 # launch pianobar
 super + alt + p
-    st -e pianobar
+    terminator -e pianobar
 # launch ranger
 super + alt + r
     terminator -e ranger
@@ -149,7 +149,7 @@ super + alt + w
     st -e wopr report.xml
 # launch youtube viewer
 super + alt + y
-    st -e youtube-viewer
+    terminator -e straw-viewer
     
     
 # DMENU SCRIPTS (Alt+Ctrl+Key)
@@ -195,9 +195,11 @@ XF86Audio{Raise,Lower}Volume
 	amixer sset Master 5%{+,-}; pkill -RTMIN+10 blocks
 	
 #screenshot	
-print
- terminator -e scrot
+Print
+ scrot '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f /home/jammy/screenshots'
 	
+super + Print 
+  scrot -s '%Y-%m-%d_$wx$h_scrot.png' -e 'mv $f /home/jammy/screenshots'
 # Function keys
 
 super + F1
@@ -206,6 +208,10 @@ super + F2
 	dbus-launch spotify
 super + F3
   brave
+
+super + F4
+  teams
+
 super + F9
 	lxqt-config-brightness -d 5
 super + F10
