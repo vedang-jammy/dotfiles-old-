@@ -11,16 +11,14 @@ alias \
 	alias yta="yt -x -f bestaudio/best" \
 	alias ffmpeg="ffmpeg -hide_banner" \
 	alias gtop="LANG=en_US.utf8 TERM=xterm-256color gtop" \
-  alias mnt2="udisksctl mount -b /dev/sda5" \
   alias mnt1="udisksctl mount -b /dev/sda1" \
   alias umnt1="udisksctl unmount -b /dev/sda1" \
-  alias umnt2="udisksctl unmount -b /dev/sda5" \
 # Abbrevation for long Commands
 alias \
 	alias ka="killall" \
 	alias g="git" \
 	#trem="transmission-remote" \#
-	#alias YT="youtube-viewer" \#
+	alias YT="straw-viewer" \#
 	alias sdn="sudo shutdown -h now" \
 	alias f="$FILE" \
 	alias e="$EDITOR" \
@@ -28,8 +26,10 @@ alias \
 	alias y='yay'	\
 	alias emu="scrcpy -m 1920"\
 	alias SS="sudo systemctl"\
-	alias zshrc="gedit ~/.zshrc"\
-	alias config="devour sudo gedit ~/mybuilds/dwm/config.h"\
+	alias zshrc="nvim ~/.zshrc"\
+	alias config="nvim /home/jammy/.config/bspwm/bspwmrc"\
+  alias sxconf="nvim /home/jammy/.config/sxhkd/sxhkdrc"\
+  alias nvimconf="cd ~/.config/nvim"\
 	alias l='ls'\
 	alias ll="ls -l"\
 	alias la="ls -a"\

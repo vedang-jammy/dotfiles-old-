@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/jammy-bspc/.oh-my-zsh"
+export ZSH="/home/jammy/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -117,15 +117,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-
+export LANG=en_US.UTF-8
 ### RANDOM COLOR SCRIPT ###
 
 #/opt/shell-color-scripts/colorscript.sh random
 
 # Load aliases
-[ -f "/home/jammy-bspc/dotfiles/.config/zsh/aliasrc" ] && source "/home/jammy-bspc/dotfiles/.config/zsh/aliasrc"
+[ -f "/home/jammy/dotfiles/.config/zsh/aliasrc" ] && source "/home/jammy/dotfiles/.config/zsh/aliasrc"
 
 #custom greet
 #/home/jammy/greet.zsh
 #
-neofetch
+pfetch
